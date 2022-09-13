@@ -1,7 +1,3 @@
-//Set Variables to player scores to reference later in the game development
-
-let playerOneScore = 0;
-let playerTwoScore = 0;
 
 //create the smallest piece of our game which is a card by creating a card class
 class Card {
@@ -63,6 +59,10 @@ class Player {
     }
 }
 
+//Set Variables to player scores to reference later in the game development
+
+let playerOneScore = 0;
+let playerTwoScore = 0;
 
 
 //Game class is the overarching piece of our game that holds all of the functionality
@@ -113,23 +113,25 @@ class Game {
     
     }
     //stated final function to compare final scores, declare a winner, and give the final score
+    
     function determineWinner(playerOneScore,playerTwoScore){
         if(playerOneScore > playerTwoScore){    
-            console.log(`Player One wins the game!`);
+            return `Player One wins the game!`;
         }else if(playerTwoScore > playerOneScore){
-            console.log(`Player Two wins the game!`);
+            return `Player Two wins the game!`;
         }else {
-            console.log(`It was a tie game!`)
+            return `It was a tie game!`; 
         }
-        
+       
        }
-            
+ 
+
  //Called game class and instance of each method   
 let game1 = new Game();
 game1.setUpPlay('Player 1', 'Player 2');
 game1.playRounds();
 determineWinner(playerOneScore,playerTwoScore);
-
+console.log(determineWinner(playerOneScore,playerTwoScore));
 console.log(`The final score is 
         Player One: ${playerOneScore} 
         Player Two: ${playerTwoScore}`);
